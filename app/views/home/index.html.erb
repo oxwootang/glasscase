@@ -11,20 +11,24 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <% if current_user %>
-      <p id='signed-in-txt'>Signed in as <strong><%= current_user.name %></strong>!</p>
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <div class='navbar-right' id='signed-in-txt'>
+        <p>Signed in as <strong><%= current_user.name %></strong>!</p>
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      </div>
       <% else %>
-      <form class="navbar-form navbar-right">
+<!--       <form class="navbar-form navbar-right">
         <div class="form-group">
           <input type="text" placeholder="Email" class="form-control">
         </div>
         <div class="form-group">
           <input type="password" placeholder="Password" class="form-control">
         </div>
-        <button type="submit" class="btn btn-success">Sign in</button>
-        <%= link_to "Or Sign-In with Google", "/auth/google_oauth2", id: "sign_in" %>
+        <button type="submit" class="btn btn-success">Sign in</button> -->
+      <div class="navbar-right" id='signed-in-txt'>
+        <%= link_to "Sign-In with Google", "/auth/google_oauth2", id: "sign_in" %>
+      </div>
       <% end %>
-      </form>
+<!--       </form> -->
     </div><!--/.navbar-collapse -->
   </div>
 </nav>
